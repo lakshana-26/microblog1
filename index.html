@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectX</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN ================= -->
+
+    <div id="loginPage" class="auth-page">
+
+        <div class="auth-box">
+
+            <h1>ConnectX</h1>
+
+            <p>Connect. Share. Follow.</p>
+
+            <input
+                type="text"
+                id="loginUsername"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+            >
+
+            <button onclick="login()">
+                Login
+            </button>
+
+            <p class="switch">
+                Don't have an account?
+                <span onclick="showRegister()">Register</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= REGISTER ================= -->
+
+    <div id="registerPage" class="auth-page hidden">
+
+        <div class="auth-box">
+
+            <h1>ConnectX</h1>
+
+            <p>Create your account</p>
+
+            <input
+                type="text"
+                id="registerUsername"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+            >
+
+            <button onclick="register()">
+                Register
+            </button>
+
+            <p class="switch">
+                Already have an account?
+                <span onclick="showLogin()">Login</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN APP ================= -->
+
+    <div id="appPage" class="hidden">
+
+        <!-- NAVBAR -->
+
+        <nav>
+
+            <div class="logo">
+                ConnectX
+            </div>
+
+            <div class="nav-right">
+
+                <span id="welcomeUser">
+                    Hi, User
+                </span>
+
+                <button onclick="showProfile()">
+                    Profile
+                </button>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <!-- MAIN -->
+
+        <main>
+
+
+            <!-- ================= PROFILE ================= -->
+
+            <div id="profileSection" class="profile-section hidden">
+
+                <div class="profile-top">
+
+                    <div class="big-profile-circle" id="profileCircle">
+                        U
+                    </div>
+
+                    <div>
+
+                        <h2 id="profileUsername">
+                            Username
+                        </h2>
+
+                        <div class="profile-counts">
+
+                            <div>
+                                <strong id="profilePosts">0</strong>
+                                <span>Posts</span>
+                            </div>
+
+                            <div>
+                                <strong id="profileFollowers">0</strong>
+                                <span>Followers</span>
+                            </div>
+
+                            <div>
+                                <strong id="profileFollowing">0</strong>
+                                <span>Following</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="back-btn"
+                    onclick="showHome()">
+                    Back to Home
+                </button>
+
+            </div>
+
+
+            <!-- ================= CREATE POST ================= -->
+
+            <div class="create-post">
+
+                <h2>Create Post</h2>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                >
+
+                <textarea
+                    id="captionInput"
+                    placeholder="Write a caption..."
+                ></textarea>
+
+                <button
+                    class="post-btn"
+                    onclick="createPost()">
+                    Post
+                </button>
+
+            </div>
+
+
+            <!-- ================= PEOPLE ================= -->
+
+            <div class="people-section">
+
+                <h2>People</h2>
+
+                <div id="peopleList"></div>
+
+            </div>
+
+
+            <!-- ================= FEED ================= -->
+
+            <div id="feed"></div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
